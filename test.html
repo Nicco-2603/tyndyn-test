@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Form con reCAPTCHA</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <h2>Modulo di contatto con reCAPTCHA</h2>
+
+  <form action="http://localhost:3000/verifica" method="POST">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <div class="g-recaptcha" data-sitekey="6LdK11wrAAAAAGk9rLQscx9v9yJYHbwifaeVxNQR"></div>
+    <br>
+ 
+    <input type="submit" value="Invia">
+  </form>
+</body>
+</html>

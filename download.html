@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descarrega a App TynDyn</title>
+  <link rel="stylesheet" href="/css/download.css" />
+</head>
+<body>
+  <!-- Hero principal -->
+  <section class="hero-download">
+    <div class="hero-left">
+      <h1 class="app-name">TynDyn</h1>
+      <a href="#" class="download-button">DESCARGA LA APP</a>
+    </div>
+    <div class="hero-right">
+      <img src="/imagens/Tyndyn.png" alt="Imagem da App" />
+    </div>
+  </section>
+
+  <!-- Secção inferior -->
+ <section class="info-footer hidden-on-load">
+  <div class="info-intro">
+    <h2>Plataformas y dispositivos compatibles</h2>
+    <p>TynDyn está disponible para dispositivos <strong>iOS</strong> y <strong>Android</strong>. Además de nuestras aplicaciones móviles, puedes visitar <a href="#">TynDyn.com</a> para usar la versión web.</p>
+    <p>También ofrecemos una versión ligera para que la uses donde quieras — descárgala ahora desde <strong>Google Play Store</strong> o <strong>App Store</strong>.</p>
+    <p>Compatible con iOS 16.0+, Android 9.0+ y los principales navegadores (Chrome, Safari, Edge...)</p>
+  </div>
+
+  <div class="info-columns">
+  <div>
+    <h3>Legal</h3>
+    <ul>
+      <li><a href="#">Privacidad</a></li>
+      <li><a href="#">Términos y condiciones</a></li>
+      <li><a href="#">Política de cookies</a></li>
+      <li><a href="#">Propiedad intelectual</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Empleo</h3>
+    <ul>
+      <li><a href="#">Portal de empleo</a></li>
+      <li><a href="#">Blog de tecnología</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Comunidad</h3>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">TikTok</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">Facebook</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Ayuda</h3>
+    <ul>
+      <li><a href="#">Preguntas frecuentes</a></li>
+      <li><a href="#">Contacto</a></li>
+      <li><a href="#">Sala de prensa</a></li>
+      <li><a href="#">Código promocional</a></li>
+    </ul>
+  </div>
+</div>
+
+<hr class="footer-divider" />
+
+<div class="app-promo">
+  <p><strong>¡Descarga la aplicación!</strong></p>  
+    <div class="store-buttons">
+      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Download_on_the_App_Store_RGB_blk.svg" alt="App Store" /></a>
+      <a href="#"><img src="/imagens/google-play-badge.png" alt="Google Play" /></a>
+    </div>
+  </div>
+</section>
+
+  <script>
+    // Mostrar footer apenas após scroll
+    window.addEventListener("scroll", () => {
+      const infoFooter = document.querySelector(".info-footer");
+      const scrollTrigger = 200; // px
+      if (window.scrollY > scrollTrigger) {
+        infoFooter.classList.add("visible");
+      }
+    });
+  </script>
+</body>
+</html>

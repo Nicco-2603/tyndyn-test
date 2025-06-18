@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayuda - Tyndyn</title>
+  <link rel="stylesheet" href="css/ayuda.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="imagens/Tyndyn.png" alt="Logo Tyndyn" class="logo-img" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-item">Inicio</a>
+        <a href="download.html" class="nav-item">Descargas</a>
+        <a href="registro.html" class="nav-item">Sócios</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <header class="hero-section">
+      <h1>Ayuda</h1>
+      <p>Estamos aquí para ayudarte. Consulta las secciones abajo o ponte en contacto directamente con nuestro equipo.</p>
+    </header>
+
+    <section id="ayuda-intro" class="section">
+      <h2>¿En qué podemos ayudarte?</h2>
+      <p>En Tyndyn, nuestro compromiso es ofrecerte soporte profesional y rápido para resolver cualquier duda o problema que tengas. Aquí encontrarás toda la información para contactarnos, conocer al equipo y obtener asistencia efectiva.</p>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> contacto@tyndyn.com</p>
+        <p><strong>Teléfono:</strong> +34 912 345 678</p>
+        <p><strong>Dirección:</strong> Calle Innovación, 123, Madrid, España</p>
+      </div>
+    </section>
+
+    <section id="equipo" class="section">
+      <h2>Conoce a nuestro equipo</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dinis Carvalho" />
+          <h4>Dinis Carvalho</h4>
+          <p>Aprendiz</p>
+        </div>
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María López" />
+          <h4>María López</h4>
+          <p>Aprendiz</p>
+        </div>
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Afonso Ferreira" />
+          <h4>Afonso Ferreira</h4>
+          <p>Aprendiz</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="formulario-ayuda" class="section">
+      <h2>Formulario de Ayuda</h2>
+      <form id="helpForm" action="#" method="POST" class="help-form">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
+
+        <label for="consulta">Consulta</label>
+        <textarea id="consulta" name="consulta" rows="5" required placeholder="Describe tu duda o problema"></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="como-ayudamos" class="section">
+      <h2>Cómo Ayudamos</h2>
+      <p>Estamos disponibles 24/7 para asistirte vía email, teléfono o chat en vivo. Usamos tecnología avanzada para diagnosticar y resolver problemas rápidamente. También ofrecemos tutoriales y documentación completa.</p>
+    </section>
+
+    <section id="faqs" class="section">
+      <h2>Preguntas Frecuentes (FAQs)</h2>
+      <div class="faq-item">
+        <div class="faq-question">¿Cómo puedo contactar con el soporte técnico?</div>
+        <div class="faq-answer">Puedes hacerlo por email, teléfono o usando el formulario de ayuda. ¡Estamos disponibles 24/7!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Cuál es el tiempo de respuesta promedio?</div>
+        <div class="faq-answer">Respondemos en menos de 24 horas, muchas veces en menos de una.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Ofrecen soporte para todos los productos Tyndyn?</div>
+        <div class="faq-answer">Sí, damos soporte completo a todos los productos y servicios de Tyndyn.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        answer.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

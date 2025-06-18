@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayuda - Tyndyn</title>
+  <link rel="stylesheet" href="css/ayuda.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="imagens/Tyndyn.png" alt="GRUPOS TYNDYN" class="logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-item">Inicio</a>
+        <a href="download.html" class="nav-item">Descargas</a>
+        <a href="registro.html" class="nav-item">Sócios</a>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Ayuda</h1>
+
+  <section id="ayuda-intro">
+    <h2>¿En qué podemos ayudarte?</h2>
+    <p>
+      En Tyndyn, nuestro compromiso es ofrecerte soporte profesional y rápido para que puedas resolver cualquier duda o problema que tengas. Aquí encontrarás toda la información que necesitas para contactarnos, conocer a nuestro equipo y obtener ayuda efectiva.
+    </p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> contacto@tyndyn.com</p>
+      <p><strong>Teléfono:</strong> +34 123 456 789</p>
+      <p><strong>Dirección:</strong> Calle Ficticia 123, Madrid</p>
+    </div>
+  </section>
+
+  <section id="equipo">
+    <h2>Equipo</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dinis Carvalho" />
+        <h4>Dinis Carvalho</h4>
+        <p>Aprendiz</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María López" />
+        <h4>María López</h4>
+        <p>Aprendiz</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Afonso Ferreira" />
+        <h4>Afonso Ferreira</h4>
+        <p>Aprendiz</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario-ayuda">
+    <h2>Formulario de Ayuda</h2>
+    <form id="helpForm" method="POST" action="verifica.php">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
+
+      <label for="consulta">Consulta</label>
+      <textarea id="consulta" name="consulta" rows="5" required placeholder="Describe tu duda o problema"></textarea>
+      <div class="g-recaptcha" data-sitekey="6LdK11wrAAAAAGk9rLQscx9v9yJYHbwifaeVxNQR"></div>
+      <button type="submit">Enviar</button>
+      
+    </form>
+  </section>
+
+  <section id="como-ayudamos">
+    <h2>Cómo Ayudamos</h2>
+    <div class="help-methods">
+      <p>
+        Nuestro equipo está disponible 24/7 para asistirte vía email, teléfono o chat en vivo. Utilizamos tecnologías avanzadas para diagnosticar y solucionar problemas con rapidez, y además ofrecemos tutoriales y documentación completa para facilitar tu experiencia.
+      </p>
+      <p>
+        Además, actualizamos constantemente nuestros recursos para estar siempre a la vanguardia y garantizar un servicio de máxima calidad.
+      </p>
+    </div>
+  </section>
+
+  <section id="faqs">
+    <h2>Preguntas Frecuentes (FAQs)</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">¿Cómo puedo contactar con el soporte técnico?</div>
+      <div class="faq-answer">
+        Puedes contactar con nosotros por email, teléfono o a través del formulario de ayuda en esta página. Estamos disponibles 24/7.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">¿Cuál es el tiempo de respuesta promedio?</div>
+      <div class="faq-answer">
+        Normalmente respondemos en menos de 24 horas laborales, y muchos casos en menos de una hora.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">¿Ofrecen soporte para todos los productos Tyndyn?</div>
+      <div class="faq-answer">
+        Sí, nuestro equipo de soporte está capacitado para ayudarte con todos los productos y servicios de Tyndyn.
+      </div>
+    </div>
+  </section>
+
+  <!-- Script FAQ toggle -->
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        answer.classList.toggle('open');
+      });
+    });
+  </script>
+
+  <!-- Script para enviar el formulario -->
+  <script>
+  document.getElementById("helpForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nombre = this.nombre.value.trim();
+    const email = this.email.value.trim();
+    const consulta = this.consulta.value.trim();
+
+    if (!nombre || !email || !consulta) {
+      alert("Por favor, rellena todos los campos.");
+      return;
+    }
+
+    grecaptcha.ready(function () {
+      grecaptcha.execute("6LdK11wrAAAAAGk9rLQscx9v9yJYHbwifaeVxNQR", { action: "submit" }).then(function (token) {
+        fetch("http://localhost:3000/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre, email, consulta, token }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert(data.message);
+            if (data.message.includes("Gracias")) {
+              document.getElementById("helpForm").reset();
+            }
+          })
+          .catch(() =>
+            alert("Error al enviar la consulta. Intenta más tarde.")
+          );
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

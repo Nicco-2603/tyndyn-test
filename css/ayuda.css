@@ -1,0 +1,335 @@
+/* nav again */
+
+
+.logo-img {
+  background-color: transparent;
+  height: 50px;        
+  width: auto;         
+  display: block;
+}
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 1000;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-nav.shrink {
+  padding: 8px 30px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: white;
+  transition: font-size 0.3s ease;
+}
+
+.main-nav.shrink .nav-logo {
+  font-size: 1.3rem;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Navigation Items */
+.nav-item {
+  position: relative;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  padding: 5px 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Shrink effect on nav items */
+.main-nav.shrink .nav-item,
+.main-nav.shrink .dropbtn {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+/* Drop Button */
+.nav-item,
+.dropbtn {
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropbtn:hover {
+  background-color: #FFFFFF33;
+  z-index: 1;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: white;
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1000;
+  margin-top: 5px;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Show Dropdown */
+.dropdown-content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Main Links Section */
+.main-links {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Links Container */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Link Items */
+.main-link-item {
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.main-link-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #f39c12;
+  color: #f39c12;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  color: #0b3d91;
+  margin-bottom: 10px;
+}
+
+section {
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 8px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Contacto */
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Equipo */
+.team-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.team-member {
+  flex: 1 1 200px;
+  text-align: center;
+}
+.team-member img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(11, 61, 145, 0.3);
+}
+.team-member h4 {
+  color: #0b3d91;
+}
+.team-member p {
+  color: #555;
+  font-style: italic;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+label {
+  font-weight: 600;
+  color: #0b3d91;
+}
+input, textarea {
+  padding: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus {
+  border-color: #0b3d91;
+  outline: none;
+}
+button {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: #0b3d91;
+  color: white;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+button:hover {
+  background-color: #08407e;
+}
+
+/* Cómo ayudamos */
+.help-methods p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+.faq-question {
+  cursor: pointer;
+  font-weight: 600;
+  color: #0b3d91;
+  position: relative;
+  padding-right: 25px;
+}
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.faq-question.active::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: #333;
+  margin-top: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.faq-answer.open {
+  max-height: 200px;
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
