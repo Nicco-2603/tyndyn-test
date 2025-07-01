@@ -30,6 +30,7 @@ window.onclick = function (event) {
   }
 }
 
+
 // Intersection Observer para fade-in
 const observerOptions = {
   threshold: 0.1,
@@ -62,72 +63,38 @@ document.addEventListener("DOMContentLoaded", () => {
   if (wave) {
     wave.style.animation = "wave 3s ease-in-out infinite"
   }
+})
 
-  // Hover nas imagens
-  document.querySelectorAll(".grid-item img, .bottom-item img, .final-image img").forEach((img) => {
-    img.addEventListener("mouseenter", function () {
-      this.style.transform = "scale(1.05)"
-    })
+// Hover nas imagens
+document.querySelectorAll(".grid-item img, .bottom-item img, .final-image img").forEach((img) => {
+  img.addEventListener("mouseenter", function () {
+    this.style.transform = "scale(1.05)"
+  })
 
-    img.addEventListener("mouseleave", function () {
+  img.addEventListener("mouseleave", function () {
+    this.style.transform = "scale(1)"
+  })
+})
+
+// Botões de contacto (com animação e alerta)
+document.querySelectorAll(".cta-button, .contact-button").forEach((button) => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault()
+    this.style.transform = "scale(0.95)"
+    setTimeout(() => {
       this.style.transform = "scale(1)"
-    })
+    }, 150)
+
+    alert("¡Gracias por tu interés! Te contactaremos pronto para planificar tu aventura.")
   })
+})
 
-  // Botões de contacto (com animação e alerta)
-  document.querySelectorAll(".cta-button, .contact-button").forEach((button) => {
-    button.addEventListener("click", function (e) {
-      e.preventDefault()
-      this.style.transform = "scale(0.95)"
-      setTimeout(() => {
-        this.style.transform = "scale(1)"
-      }, 150)
-
-      alert("¡Gracias por tu interés! Te contactaremos pronto para planificar tu aventura.")
-    })
+// Otimização do carregamento de imagens
+document.querySelectorAll("img").forEach((img) => {
+  img.addEventListener("load", function () {
+    this.style.opacity = "1"
   })
-
-  // Otimização do carregamento de imagens
-  document.querySelectorAll("img").forEach((img) => {
-    img.addEventListener("load", function() {
-      this.style.opacity = "1"
-    })
-    img.style.backgroundColor = "#f0f0f0"
-  })
-
-  // Submit form con fetch al backend
-  const helpForm = document.getElementById("helpForm");
-  if (helpForm) {
-    helpForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const nombre = this.nombre.value.trim();
-      const email = this.email.value.trim();
-      const consulta = this.consulta.value.trim();
-
-      if (!nombre || !email || !consulta) {
-        alert("Por favor, rellena todos los campos.");
-        return;
-      }
-
-      try {
-        const response = await fetch("http://localhost:3000/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nombre, email, consulta }),
-        });
-
-        if (!response.ok) throw new Error("Error en el servidor");
-
-        const data = await response.json();
-        alert(data.message);
-        this.reset();
-      } catch (error) {
-        alert("Error al enviar la consulta. Intenta de nuevo más tarde.");
-        console.error(error);
-      }
-    });
-  }
+  img.style.backgroundColor = "#f0f0f0"
 })
 
 // Efeito de fade-in para sections

@@ -8,32 +8,52 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-     <nav class="main-nav">
+<!-- Contenitore sticky per barra contatti + menu -->
+  <div class="sticky-header">
+
+    <!-- Barra di navigazione principale -->
+    <nav class="main-nav">
   <div class="nav-container">
+
+    <!-- Logo -->
     <a href="#" class="nav-logo">
-        <img src="imagens/Tyndyn.png" alt="GRUPOS TYNDYN" class="logo-img">
+      <img src="imagens/Tyndyn.png" alt="GRUPOS TYNDYN" class="logo-img">
     </a>
-    <div class="nav-links">
-      <div class="nav-item dropdown">
-        <span class="dropbtn" onclick="toggleDropdown()">Servicios</span>
-        <div class="dropdown-content" id="dropdownMenu">
-          <a href="#companion">Encuentra tu compañero</a>
-          <a href="#groups">Grupos de marcha</a>
-          <a href="#organize">Organiza tu  viaje en grupo</a>
-          <a href="#destinations">Destinos</a>
-          <a href="#personalized"> Personalized travel</a>
-          <a href="#experience">Experiencia de viajeros</a>
-          <a href="#tyndyn">Por qué elegir TynDyn</a>
-          <a href="#unirte">Por qué unirte a nuestros viajes</a>
+
+    <!-- Contatti in alto a destra -->
+    <div class="nav-contact" style="display: flex; flex-direction: column; align-items: flex-end;">
+    <div class="contact-info" style="color: white; font-size: 12px; ">
+    <span style="margin-left: 15px;">📞 +34 123 456 789</span>
+    <span style="margin-left: 15px;">✉️ info@tyndyn.com</span>
+    <span style="margin-left: 15px;">📸instagram</span>
+  </div>
+
+  <div class="nav-links">
+    <!-- il tuo menu qui -->
+      <!-- Menu principale -->
+      <div class="nav-links">
+        <div class="nav-item dropdown">
+          <span class="dropbtn" onclick="toggleDropdown()">Servicios</span>
+          <div class="dropdown-content" id="dropdownMenu">
+            <a href="#companion">Encuentra tu compañero</a>
+            <a href="#groups">Grupos de marcha</a>
+            <a href="#organize">Organiza tu viaje en grupo</a>
+            <a href="#destinations">Destinos</a>
+            <a href="#personalized">Personalized travel</a>
+            <a href="#experience">Experiencia de viajeros</a>
+            <a href="#tyndyn">Por qué elegir TynDyn</a>
+            <a href="#unirte">Por qué unirte a nuestros viajes</a>
+          </div>
         </div>
+        <a href="download.html" class="nav-item">Descargas</a>
+        <a href="registro2.html" class="nav-item">Sócios</a>
+        <a href="ayuda.html" class="nav-item">Ayuda</a>
       </div>
-      <a href="download.html" class="nav-item">Descargas</a>
-      <a href="registro.html" class="nav-item">Sócios</a>
-      <a href="ayuda.html" class="nav-item">Ayuda</a>
     </div>
+
   </div>
 </nav>
+  </div>
 
     <!-- Header Section -->
      <section id="inicio" class="companion-section"></section>
@@ -227,46 +247,55 @@
         </div>
     </section>
 
-    <!-- Personalized Travel Section -->
-    <section id="personalized" class="destinations-section"></section>
-    <section class="personalized-section">
-        <div class="container">
-            <h2>PERSONALIZAMOS TU VIAJE</h2>
-            <div class="personalized-content">
-                <div class="service-features">
-                    <div class="feature">
-                        <span class="feature-icon">✈️</span>
-                        <h3>Vuelos a Medida</h3>
-                        <p>Encuentra las mejores conexiones</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-icon">🏨</span>
-                        <h3>Alojamiento Selecto</h3>
-                        <p>Hoteles y experiencias únicas</p>
-                    </div>
-                    <!-- More features... -->
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="departures-section personalized-section">
+  <div class="departures-header">
+    <h2>PERSONALIZAMOS<br>TU VIAJE</h2>
+  </div>
+  <div class="departures-grid">
+    <div class="departure-item">
+      <h3>✈️ Vuelos a Medida</h3>
+      <p>Encuentra las mejores conexiones</p>
+    </div>
+    <div class="departure-item">
+      <h3>🏨 Alojamiento Selecto</h3>
+      <p>Hoteles y experiencias únicas</p>
+    </div>
+    <div class="departure-item">
+      <h3>🗺️ Itinerarios Únicos</h3>
+      <p>Diseñados especialmente para ti y tu estilo de viaje</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Traveler Experience Section -->
-    <section id="experience" class="destinations-section"></section>
-    <section class="experience-section">
-        <div class="container">
-            <h2>EXPERIENCIA DE VIAJEROS</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400" alt="Viajero feliz">
-                    <div class="card-content">
-                        <p class="testimonial-text">"Una experiencia increíble con un grupo maravilloso"</p>
-                        <span class="testimonial-author">- María, Viaje a Japón</span>
-                    </div>
-                </div>
-                <!-- More testimonials... -->
-            </div>
-        </div>
-    </section>
+<section class="experience-section">
+  <div class="departures-header">
+    <h2 id="titolaccio">EXPERIENCIA<br>DE VIAJEROS</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400" alt="Viajero feliz">
+      <div class="card-content">
+        <p class="testimonial-text">"Una experiencia increíble con un grupo maravilloso"</p>
+        <span class="testimonial-author">- María, Viaje a Japón</span>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=300&h=300&fit=crop&crop=center" alt="Viajero feliz">
+      <div class="card-content">
+        <p class="testimonial-text">"Un viaje soñado, superó todas mis expectativas"</p>
+        <span class="testimonial-author">- Juan, Islandia y Noruega</span>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=300&h=300&fit=crop&crop=center" alt="Viajero feliz">
+      <div class="card-content">
+        <p class="testimonial-text">"Servicio impecable y lugares inolvidables"</p>
+        <span class="testimonial-author">- Ana, Maldivas y Tailandia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Why Choose Tyndyn Section -->
     <section id="tyndyn" class="destinations-section"></section>
@@ -388,7 +417,7 @@
       <h4>Enlaces Rápidos</h4>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="registro.html">Servicios</a></li>
+        <li><a href="registro2.html">Servicios</a></li>
       </ul>
     </div>
 
